@@ -7,6 +7,9 @@
     <div class="span8">
         <p>[% message %]</p>
         <p>
+            <b class="title">User ID:</b> [% user.id %]
+        </p>
+        <p>
             <b class="title">Username:</b> [% user.username %]
         </p>
         <p>
@@ -23,4 +26,8 @@
 
 <hr />
 
-<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">List all Users</a></p>
+<p>
+    <a class="btn btn-primary" href="[% c.uri_for('list') %]">List all Users</a>
+    <a class="btn btn-primary" href="[% '/admin/user/' _ user.id _ '/edit' %]" >Edit User</a>
+    <a class="btn btn-danger" href="[% '/admin/user/' _ user.id _ '/delete' %]" >Delete User</a>
+</p>

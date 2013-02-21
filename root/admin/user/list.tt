@@ -30,5 +30,5 @@
     [% END %]
   </tbody>
 </table>
-<p><a class="btn btn-primary" href="[% '/admin/admin/create' %]">Add admin</a></p>
+<p><a class="btn btn-primary" href="[% '/admin/user/create' %]">Add admin</a></p>
 </div>
