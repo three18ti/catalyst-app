@@ -12,6 +12,21 @@ my $schema = MyApp::Schema->connect( 'dbi:SQLite:db/myapp.db', );
 
 $schema->deploy({ add_drop_table => 1});
 
+$schema->resultset('Owner')->populate([
+    [ qw( id name ) ],
+    [ 1, 'foo' ],
+    [ 2, 'bar' ],
+]);
+
+$schema->resultset('Server')->populate([
+    [ qw( id name owner ) ],
+    [ 1, 'one', 1 ],
+    [ 2, 'two', 2 ],
+    [ 3, 'three', 1 ],
+    [ 'a-1', 'a-1.test', 1],
+    [ 'a-2', 'a-2.test', 2], 
+]);
+
 $schema->resultset('Role')->delete();
 
 $schema->resultset('Role')->populate([
@@ -63,6 +78,10 @@ my $users = $schema->resultset('User');
 
 foreach ($users->all) {
     $_->add_role('User');
+}
+
+foreach my $server ($schema->resultset('Server')->all) {
+    say $server->owner;
 }
 
 exit 0;

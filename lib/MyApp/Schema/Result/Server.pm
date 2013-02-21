@@ -19,7 +19,11 @@ __PACKAGE__->add_columns(
         is_nullable => 0,
         is_auto_increment => 0,
     },
-    
+    owner => {
+        data_type   => 'varchar',
+        size        => 16,
+        is_nullable => 0,
+    },    
 );
 
 __PACKAGE__->set_primary_key('id');
