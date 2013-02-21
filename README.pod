@@ -1,0 +1,40 @@
+=head1 Introduction
+
+This is an example project using Perl Catalyst and Twitter Bootstrap 
+to perform some common web fuctions
+
+=head1 Getting Started
+
+Clone this repository:
+
+  $ git clone https://github.com/three18ti/catalyst-app.git
+  $ cd catalyst-app
+
+Install the project dependencies:
+
+  $ dzil listdeps | cpanm
+
+Populate initial data
+
+  $ DBIC_TRACE=1 script/myapp_loaddb.pl
+
+Start the server
+
+  $ DBIC_TRACE=1 script/myapp_server.pl -r 
+
+=head1 TODO:
+
+Everything...
+
+-- use 
+
+=head1 Credit
+
+This work is largely derivative of the following resources:
+
+https://github.com/gshank/formhandler-example
+http://www.catalystframework.org/calendar/2011/15
+
+Not to mention the hours spent on IRC and Perlmonks.
+My thanks goes out to all those who have assisted me along my way,
+a list which is far too long to list.
