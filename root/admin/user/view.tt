@@ -1,0 +1,26 @@
+<div class="row-fluid">
+    <div class="span3 thumbnail">
+        [% IF user.profile_pic %]
+        [% END %]    
+    </div>
+    
+    <div class="span8">
+        <p>[% message %]</p>
+        <p>
+            <b class="title">Username:</b> [% user.username %]
+        </p>
+        <p>
+            <b class="title">Name:</b> [% user.name %]
+        </p>
+        <p>
+            <b class="title">Email:</b> [% user.email %]
+        </p>
+        <p>
+            <b class="title">Roles:</b> [% roles %]
+        </p>
+    </div>
+<div>
+
+<hr />
+
+<p><a class="btn btn-primary" href="[% c.uri_for('list') %]">List all Users</a></p>

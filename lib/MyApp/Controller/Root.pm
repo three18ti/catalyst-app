@@ -29,8 +29,10 @@ The root page (/)
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
+    my $user = $c->model('DB::User')->find('test1');
+    $c->stash( template => 'index.tt', bootstrap => 1 );
     # Hello World
-    $c->response->body( $c->welcome_message );
+    # $c->response->body( $c->welcome_message );
 }
 
 =head2 default
