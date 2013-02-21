@@ -8,7 +8,7 @@ use warnings;
 use MyApp::Schema;
 
 #my $schema = My->schema;
-my $schema = MyApp::Schema->connect( 'dbi:SQLite:db/book.db', );
+my $schema = MyApp::Schema->connect( 'dbi:SQLite:db/myapp.db', );
 
 $schema->deploy({ add_drop_table => 1});
 
@@ -35,11 +35,10 @@ $schema->resultset('User')->populate([
 ]);
 
 # Passwords will be encrypted automatically
-for my $user ($schema->resultset('User')->all) {
-    $user->update({ password => 'test123' });
-    
-    $user->check_password('test123') or die 'Password check failed.';
-}
+#for my $user ($schema->resultset('User')->all) {
+#    $user->update({ password => 'test123' });   
+#    $user->check_password('test123') or die 'Password check failed.';
+#}
 
 my $user1 = $schema->resultset('User')->single({ id => 1 });
 
@@ -62,6 +61,10 @@ say "User1 roles: ", join(' ', map { $_->name } $user1->roles->all);
 my $users = $schema->resultset('User');
 
 foreach ($users->all) {
+    $schema->resultset('Profile')->create({
+        user_id => $_->id,
+        profile_image => 'default',   
+    });
     $_->add_role('User');
 }
 
