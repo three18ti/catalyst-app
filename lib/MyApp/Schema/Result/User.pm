@@ -22,19 +22,6 @@ __PACKAGE__->add_columns(
             is_nullable => 0,
             is_auto_increment => 0,
     },
-    name    => {
-            data_type => 'varchar',
-            size      => 256,
-            is_nullable => 0,
-            is_auto_increment => 0,
-    },
-    email   => {
-            data_type => 'varchar',
-            size      => 256,
-            is_nullable => 0,
-            is_auto_increment => 0,
-    },
-
 );
 
 __PACKAGE__->add_columns(   

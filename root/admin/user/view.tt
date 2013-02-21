@@ -1,7 +1,7 @@
 <div class="row-fluid">
     <div class="span3 thumbnail">
-        [% IF user.profile_pic %]
-        [% END %]    
+        [% IF user.profile.profile_image %]
+        [% END %]
     </div>
     
     <div class="span8">
@@ -13,13 +13,13 @@
             <b class="title">Username:</b> [% user.username %]
         </p>
         <p>
-            <b class="title">Name:</b> [% user.name %]
+            <b class="title">Name:</b> [% user.profile.name %]
         </p>
         <p>
-            <b class="title">Email:</b> [% user.email %]
+            <b class="title">Email:</b> [% user.profile.email %]
         </p>
         <p>
-            <b class="title">Roles:</b> [% roles %]
+            <b class="title">Roles:</b> [% user.roles %]
         </p>
     </div>
 <div>

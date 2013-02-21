@@ -18,7 +18,18 @@ __PACKAGE__->add_columns(
         size                => '256',
         is_nullable         => 1,
     },
-    
+    name    => {
+            data_type => 'varchar',
+            size      => 256,
+            is_nullable => 0,
+            is_auto_increment => 0,
+    },
+    email   => {
+            data_type => 'varchar',
+            size      => 256,
+            is_nullable => 0,
+            is_auto_increment => 0,
+    },    
 );
 
 __PACKAGE__->set_primary_key('user_id');
@@ -27,4 +38,3 @@ __PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::User', 'user_id');
 
 __PACKAGE__->meta->make_immutable;
 1;
-
