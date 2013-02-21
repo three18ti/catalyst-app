@@ -1,0 +1,9 @@
+        <div class="span2">
+          <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Menu</li>
+            <li[% ' class="active"' IF (c.req.path.match("\^\$")) %]><a href="[% c.uri_for('/') %]">Home</a></li>
+            <li[% ' class="active"' IF (c.req.path.match("^admin")) %]><a href="[% c.uri_for('/admin/user') %]">Admin: User</a></li>
+          </ul>
+          </div>
+        </div>
