@@ -81,7 +81,7 @@ foreach ($users->all) {
 }
 
 foreach my $server ($schema->resultset('Server')->all) {
-    say $server->owner;
+    say $server->owner->name;
 }
 
 exit 0;
