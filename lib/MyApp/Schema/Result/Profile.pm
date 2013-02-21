@@ -34,7 +34,7 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key('user_id');
 
-__PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::User', 'user_id');
+#__PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::User');
 
 __PACKAGE__->meta->make_immutable;
 1;
