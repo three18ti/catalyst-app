@@ -11,7 +11,6 @@ __PACKAGE__->config(
         user => '',
         password => '',
         AutoCommit => 1,
-        on_connect_do => q{PRAGMA foreign_keys = ON},
     }
 );
 

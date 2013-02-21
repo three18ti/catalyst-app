@@ -57,7 +57,7 @@ sub do_list {
 sub create : Chained('user_base') PathPart('create') Args(0) {
     my ( $self, $c ) = @_;
 
-    # Create the empty user row for the form
+    # Create the empty book row for the form
     my $user = $c->model('DB::User')->new_result({});
 $DB::single=1;
     $c->stash( user => $user );
@@ -74,9 +74,8 @@ sub view_user : Chained('user_base') PathPart('') CaptureArgs(1) {
     my $roles = join (', ', map { $_->name } $user->roles->all);
 
     # load user profile
-    my $profile = $c->model('DB::Profile')->find($user_id);
 
-    $c->stash ( user => $user, roles => $roles, profile => $profile, );
+    $c->stash ( user => $user, roles => $roles );
 }
 
 sub view : Chained('view_user') PathPart('') Args(1) {
