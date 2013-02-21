@@ -8,7 +8,7 @@ use warnings;
 use MyApp::Schema;
 
 #my $schema = My->schema;
-my $schema = MyApp::Schema->connect( 'dbi:SQLite:db/book.db', );
+my $schema = MyApp::Schema->connect( 'dbi:SQLite:db/myapp.db', );
 
 $schema->deploy({ add_drop_table => 1});
 
