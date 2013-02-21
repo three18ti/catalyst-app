@@ -52,6 +52,8 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key('id');
 
+#__PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::Profile');
+
 __PACKAGE__->has_many( user_roles => 'MyApp::Schema::Result::UserRole', 'user_id' );
 
 __PACKAGE__->many_to_many( roles => 'user_roles', 'role' );

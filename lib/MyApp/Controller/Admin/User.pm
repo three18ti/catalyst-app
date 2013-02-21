@@ -63,6 +63,17 @@ sub view : Chained('view_user') PathPart('') Args(1) {
    my ( $self, $c ) = @_;
 }
 
+sub edit : Chained('user_base') PathPart('edit') Args(0) {
+    my ( $self, $c ) = @_;
+    return $self->form($c);
+}
+
+sub form {
+    my ( $self, $c ) = @_;
+    
+#    my $result = 
+}
+
 =head2 index
 
 =cut

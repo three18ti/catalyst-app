@@ -7,14 +7,15 @@ extends 'MyApp::Schema::Result';
 __PACKAGE__->table('profile');
 
 __PACKAGE__->add_columns(
-    id  => {
+    user_id  => {
         data_type           => 'integer',
         size                => 16,
+        is_foreign_key      => 1,    
         is_nullable         => 0,
-        is_auto_increment   => 1,
     },
+    
 );
 
-__PACKAGE__->set_primary_key('id');
+__PACKAGE__->set_primary_key('user_id');
 
-__PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::User');
+# __PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::User');
