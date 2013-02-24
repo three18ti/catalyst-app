@@ -1,0 +1,34 @@
+<div class="row-fluid">
+  <div class="page-header">
+    <h3>List of Servers <small>(total [% servers.size %] servers)</h3>
+  </div>
+</div>
+<div class="row-fluid">
+<table id="serverss" class="table table-bordered table-striped tablesorter" summary="The list of all servers">
+  <thead>
+    <tr>
+      [% FOR column IN columns %]
+      <th scope="col">[% column.as_label %]</th>
+      [% END %]
+      <th/>
+    </tr>
+  </thead>
+  <tbody>
+    [% FOR server IN servers %]
+    <tr>
+      [% FOR column IN columns %]
+      <td>[% server.$column | html %]</td>
+      [% END %]
+      <td>
+        <div class="btn-group">
+        <a class="btn btn-mini" href="[% '/admin/server/' _ server.id  %]/[% server.name.seo_friendly %]" rel="tooltip" title="View"><i class="icon-search"></i></a>
+        <a class="btn btn-mini" href="[% '/admin/server/' _ server.id _ '/edit' %]" rel="tooltip" title="Edit"><i class="icon-pencil"></i></a>
+        <a class="btn btn-mini" href="[% '/admin/server/' _ server.id _ '/delete' %]" rel="tooltip" title="Delete"><i class="icon-trash"></i></a>
+        </div>
+      </td>
+    </tr>
+    [% END %]
+  </tbody>
+</table>
+<p><a class="btn btn-primary" href="[% '/admin/server/create' %]">Add admin</a></p>
+</div>

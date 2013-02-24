@@ -4,6 +4,7 @@
             <li class="nav-header">Menu</li>
             <li[% ' class="active"' IF (c.req.path.match("\^\$")) %]><a href="[% c.uri_for('/') %]">Home</a></li>
             <li[% ' class="active"' IF (c.req.path.match("^admin")) %]><a href="[% c.uri_for('/admin/user') %]">Admin: User</a></li>
+            <li[% ' class="active"' IF (c.req.path.match("^server")) %]><a href="[% c.uri_for('/admin/server') %]">Admin: Server</a></li>
           </ul>
           </div>
         </div>
