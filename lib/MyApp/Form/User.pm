@@ -26,14 +26,14 @@ has_field 'username'    => (
     label               => 'Username',
 );
 has_field 'name'        => (
-    accessor           => 'profile.name',
+    accessor           => 'user.profile.name',
     type                => 'Text',
     required            => 1,
     required_massage    => 'A Name is required',
     label               => 'Name',
 );
 has_field 'email'       => (
-    accessor           => 'profile.email',
+    accessor           => 'user.profile.email',
     type                => 'Text',
     required            => 1,
     required_message    => 'An email address is required',
