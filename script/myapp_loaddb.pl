@@ -57,15 +57,15 @@ $schema->resultset('User')->populate([
     [5, 'test5', 'stuff2' ],
 ]);
 
-#$schema->resultset('Profile')->populate([
-#    [ qw ( user_id name email ) ],
+$schema->resultset('Profile')->populate([
+    [ qw ( user_id name email ) ],
 
-#    [1, 'Test User 1', 'test1@example.org', ],
-#    [2, 'Test User 2', 'test2@example.org', ],
-#    [3, 'Test User 3', 'test3@example.org', ],
-#    [4, 'Test User 4', 'test4@example.org', ],
-#    [5, 'Test User 5', 'test5@example.org', ],
-#]);
+    [1, 'Test User 1', 'test1@example.org', ],
+    [2, 'Test User 2', 'test2@example.org', ],
+    [3, 'Test User 3', 'test3@example.org', ],
+    [4, 'Test User 4', 'test4@example.org', ],
+    [5, 'Test User 5', 'test5@example.org', ],
+]);
 
 # Passwords will be encrypted automatically
 for my $user ($schema->resultset('User')->all) {
@@ -95,9 +95,12 @@ say "User1 roles: ", join(' ', map { $_->name } $user1->roles->all);
 
 foreach my $user ($schema->resultset('User')->all) {
     $user->add_role('User');
-    $user->create_related('profile', { name => 'Foo', email => 'foo@bar.com' });
+#    $user->create_related('profile', { name => 'Foo', email => 'foo@bar.com' });
 }
 
+foreach my $user ($schema->resultset('User')->all) {
+    say "Name: ". $user->profile->name;
+}
 foreach my $server ($schema->resultset('Server')->all) {
     say "Server: " . $server->name . " Owner: " . $server->owner->name;
 }
