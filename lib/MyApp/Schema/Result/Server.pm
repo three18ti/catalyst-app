@@ -29,6 +29,7 @@ __PACKAGE__->add_columns(
         data_type   => 'varchar',
         size        => 16,
         is_nullable => 0,
+        is_foreign_key => 1,
     },    
 );
 
