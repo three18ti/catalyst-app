@@ -54,5 +54,3 @@ has_field submit => ( type => 'Submit', value => 'Update', element_class => ['bt
 __PACKAGE__->meta->make_immutable;
 no HTML::FormHandler::Moose;
 1;
-
-

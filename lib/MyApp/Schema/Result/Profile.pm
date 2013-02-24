@@ -13,9 +13,20 @@ __PACKAGE__->add_columns(
         is_foreign_key      => 1,    
         is_nullable         => 0,
     },
-    
+    name    => {
+            data_type => 'varchar',
+            size      => 256,
+            is_nullable => 0,
+            is_auto_increment => 0,
+    },
+    email   => {
+            data_type => 'varchar',
+            size      => 256,
+            is_nullable => 0,
+            is_auto_increment => 0,
+    },
 );
 
 __PACKAGE__->set_primary_key('user_id');
 
-# __PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::User');
+__PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::User', 'user_id');
