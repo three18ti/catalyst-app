@@ -14,7 +14,7 @@ Install the project dependencies:
 
   $ dzil listdeps | cpanm
 
-Populate initial data
+Populate initial data [1]
 
   $ DBIC_TRACE=1 script/myapp_loaddb.pl
 
@@ -27,6 +27,13 @@ Start the server
 Everything...
 
 -- use 
+
+=head1 Caveats
+
+[1] git doesn't like empty directories.  Because the DB is in such flux, I chose to ignore the sqlite db file for now.
+If you get an error that Catalyst can't open the database "db/myapp.db", you simply need to create the DB.
+
+  $ mkdir db
 
 =head1 Credit
 
