@@ -4,7 +4,7 @@ use MooseX::NonMoose;
 use namespace::autoclean;
 extends 'MyApp::Schema::Result';
 
-__PACKAGE__->table('role');
+__PACKAGE__->table('owner');
 
 __PACKAGE__->add_columns(
     id => {

@@ -28,7 +28,7 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key('id');
 
-__PACKAGE__->has_one( 'owner' => 'MyApp::Schema::Result::Owner', 'id' );
+__PACKAGE__->has_one( 'owner' => 'MyApp::Schema::Result::Owner', { 'foreign.id' => 'self.owner' } );
 
 __PACKAGE__->meta->make_immutable;
 1;

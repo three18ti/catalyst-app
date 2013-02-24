@@ -3,7 +3,7 @@
 name: MyApp
 
 MyApp::Model::DB:
-      schema_class: MyApp::MySchema
+      schema_class: MyApp::Schema
       connect_info:
         - dbi:SQLite:myapp.db
         - ''
