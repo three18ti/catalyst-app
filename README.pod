@@ -37,4 +37,4 @@ http://www.catalystframework.org/calendar/2011/15
 
 Not to mention the hours spent on IRC and Perlmonks.
 My thanks goes out to all those who have assisted me along my way,
-a list which is far too long to list.
+a list which is far too long for this readme.
