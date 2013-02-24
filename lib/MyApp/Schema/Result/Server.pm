@@ -19,7 +19,7 @@ __PACKAGE__->add_columns(
         is_nullable => 0,
         is_auto_increment => 0,
     },
-    owner => {
+    owner_id => {
         data_type   => 'varchar',
         size        => 16,
         is_nullable => 0,
@@ -28,7 +28,9 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key('id');
 
-__PACKAGE__->has_one( 'owner' => 'MyApp::Schema::Result::Owner', { 'foreign.id' => 'self.owner' } );
+#__PACKAGE__->has_one( 'owner' => 'MyApp::Schema::Result::Owner', { 'foreign.id' => 'self.owner' } );
+__PACKAGE__->belongs_to( 'owner' => 'MyApp::Schema::Result::Owner', 'owner_id', 
+                            { join_type => 'left' } );
 
 __PACKAGE__->meta->make_immutable;
 1;

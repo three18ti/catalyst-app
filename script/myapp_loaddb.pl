@@ -13,7 +13,7 @@ my $schema = MyApp::Schema->connect( 'dbi:SQLite:db/myapp.db', );
 $schema->deploy({ add_drop_table => 1});
 
 $schema->resultset('Owner')->populate([
-    [ qw( owner_id name ) ],
+    [ qw( id name ) ],
     [ 1, 'foo' ],
     [ 2, 'bar' ],
 ]);
@@ -27,7 +27,7 @@ $schema->resultset('Owner')->populate([
 #]);
 
 $schema->resultset('Server')->populate([
-    [ qw( server_id name owner ) ],
+    [ qw( id name owner_id ) ],
     [ 1, 'one', 1 ],
     [ 2, 'two', 2 ],
     [ 3, 'three', 1 ],
