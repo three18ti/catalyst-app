@@ -59,9 +59,8 @@ sub create : Chained('user_base') PathPart('create') Args(0) {
 
     # Create the empty book row for the form
     my $user = $c->model('DB::User')->new_result({});
-    my $profile = $c->model('DB::Profile')->new_result({});
 $DB::single=1;
-    $c->stash( user => $user, profile => $profile );
+    $c->stash( user => $user,);
     return $self->form($c);
 }
 

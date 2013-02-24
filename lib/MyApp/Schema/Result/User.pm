@@ -39,7 +39,7 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key('id');
 
-__PACKAGE__->belongs_to('profile' => 'MyApp::Schema::Result::Profile', 'id');
+__PACKAGE__->has_one('profile' => 'MyApp::Schema::Result::Profile', 'user_id');
 
 __PACKAGE__->has_many( user_roles => 'MyApp::Schema::Result::UserRole', 'user_id' );
 
