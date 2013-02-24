@@ -13,6 +13,9 @@
         <p>
             <b class="title">Owner:</b> [% server.owner.name %]
         </p>
+        <p>
+            <b class="title">Server Type:</b> [% server.server_type.type %]
+        </p>
     </div>
 <div>
 
