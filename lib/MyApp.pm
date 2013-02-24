@@ -20,7 +20,7 @@ use Catalyst qw/
     -Debug
     ConfigLoader
     Static::Simple
-    AutoCRUD    
+    AutoCRUD
 /;
 
 extends 'Catalyst';
