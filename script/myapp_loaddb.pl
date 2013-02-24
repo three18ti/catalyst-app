@@ -89,7 +89,12 @@ foreach ($users->all) {
 }
 
 foreach my $server ($schema->resultset('Server')->all) {
-    say $server->owner->name;
+    say "Server: " . $server->name . " Owner: " . $server->owner->name;
+}
+
+foreach my $owner ($schema->resultset('Owner')->all) {
+    say "Owner: " . $owner->name;
+    say "Servers: " . join(' ', map { $_->name } $owner->servers->all);
 }
 
 exit 0;
