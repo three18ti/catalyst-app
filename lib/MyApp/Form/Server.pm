@@ -31,11 +31,15 @@ has_field 'name'        => (
     required_massage    => 'A Name is required',
     label               => 'Server Name',
 );
+has_field 'type'        => (
+    type                => 'Select',
+    label               => 'Server Type',
+    label_column        => 'Type',    
+);
 has_field 'owner'       => (
     type                => 'Select',    
     label               => 'Owner',
     label_column        => 'name',
-#    widget              => 'CheckboxGroup',
 );
 
 has_field submit => ( type => 'Submit', value => 'Update', element_class => ['btn'] );

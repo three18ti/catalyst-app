@@ -27,12 +27,20 @@ $schema->resultset('Owner')->populate([
 #]);
 
 $schema->resultset('Server')->populate([
-    [ qw( id name owner_id ) ],
-    [ 1, 'one', 1 ],
-    [ 2, 'two', 2 ],
-    [ 3, 'three', 1 ],
-    [ 'a-1', 'a-1.test', 1],
-    [ 'a-2', 'a-2.test', 2], 
+    [ qw( id name owner_id type ) ],
+    [ 1, 'one', 1, 'HV', ],
+    [ 2, 'two', 2, 'VM', ],
+    [ 3, 'three', 1, 'VM',  ],
+    [ 'a-1', 'a-1.test', 1, 'PS', ],
+    [ 'a-2', 'a-2.test', 2, 'PS', ], 
+]);
+
+$schema->resultset('ServerType')->populate([
+    [ qw ( id type description ) ],
+
+    [ 'PS', 'Physical Server', 'Physical Server in rack', ],
+    [ 'VM', 'Virtual Machine', 'Virtual Server on Hypervisor', ],
+    [ 'HV', 'Hypervisor',      'Physical Server used as VM Host', ],
 ]);
 
 $schema->resultset('Role')->delete();
