@@ -29,7 +29,7 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key('user_id');
 
-__PACKAGE__->has_one('profile' => 'MyApp::Schema::Result::User', 'id');
+__PACKAGE__->has_one('user' => 'MyApp::Schema::Result::User', 'id');
 
 1;
 __END__
