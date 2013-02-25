@@ -1,0 +1,25 @@
+<div class="row-fluid">
+    <div class="span3 thumbnail">
+    </div>
+    
+    <div class="span8">
+        <p>[% message %]</p>
+        <p>
+            <b class="title">Server ID:</b> [% server.id %]
+        </p>
+        <p>
+            <b class="title">Name:</b> [% server.name %]
+        </p>
+        <p>
+            <b class="title">Owner:</b> [% server.owner.name %]
+        </p>
+    </div>
+<div>
+
+<hr />
+
+<p>
+    <a class="btn btn-primary" href="[% c.uri_for('list') %]">List all servers</a>
+    <a class="btn btn-primary" href="[% '/admin/server/' _ server.id _ '/edit' %]" >Edit server</a>
+    <a class="btn btn-danger" href="[% '/admin/server/' _ server.id _ '/delete' %]" >Delete server</a>
+</p>
