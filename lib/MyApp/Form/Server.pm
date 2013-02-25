@@ -34,7 +34,7 @@ has_field 'name'        => (
 has_field 'type'        => (
     type                => 'Select',
     label               => 'Server Type',
-    label_column        => 'Type',    
+    label_column        => 'type',    
 );
 has_field 'owner'       => (
     type                => 'Select',    

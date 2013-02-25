@@ -39,7 +39,7 @@ __PACKAGE__->set_primary_key('id');
 __PACKAGE__->belongs_to( 'owner' => 'MyApp::Schema::Result::Owner', 'owner_id', 
                             { join_type => 'left' } );
 __PACKAGE__->belongs_to( 'server_type' => 'MyApp::Schema::Result::ServerType', 
-                            { 'foreign.id' => 'self.type'},
+                            { 'foreign.id' => 'self.type' },
                             { join_type => 'left' } 
 );
 
